@@ -1,7 +1,7 @@
 # Личный проект «Readme»
 
 * Студент: [Константин Кандрук](https://up.htmlacademy.ru/nodejs-2/5/user/1168091).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Сушко](https://htmlacademy.ru/profile/sashasushko).
 
 ---
 
