@@ -3,5 +3,5 @@ export interface User {
   datetime: string,
   email: string,
   login: string,
-  avatar: string
+  avatar?: string
 }
