@@ -18,7 +18,10 @@ export class AuthController {
   }
 
   @Post('login')
-  async login(@Body() loginUserDto: LoginUserDto) {}
+  async login(@Body() loginUserDto: LoginUserDto) {
+    const verifiedUser = await this.authService.verifyUser(loginUserDto);
+    return fillDto(CreateUserDto, verifiedUser);
+  }
 
   @Get('logout')
   async logout() {}

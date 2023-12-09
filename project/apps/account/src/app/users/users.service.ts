@@ -7,4 +7,8 @@ export class UsersService {
     private readonly userRepository: UserRepository
   ) {
   }
+
+  async getUser(userId: string) {
+    return await this.userRepository.findById(userId);
+  }
 }
