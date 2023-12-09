@@ -1,5 +1,5 @@
-export * from './lib/user.interface';
-export * from './lib/auth-user.interface';
+export * from './lib/user/user.interface';
+export * from './lib/user/auth-user.interface';
 export * from './lib/comment.inerface';
 export * from './lib/hash-tag.interface';
 export * from './lib/like.interface';
