@@ -1,5 +1,7 @@
 import { AuthUser } from '@project/shared/types';
 import { Entity } from '@project/shared/core';
+import { genSalt, hash, compare } from 'bcrypt';
+import { SALT_ROUNDS } from '../../account.constant';
 
 export class UserEntity implements AuthUser, Entity<string> {
   avatar?: string;
@@ -32,5 +34,15 @@ export class UserEntity implements AuthUser, Entity<string> {
     if (authUser.avatar) {
       this.avatar = authUser.avatar;
     }
+  }
+
+  public async setPassword(password: string): Promise<UserEntity> {
+    const salt = await genSalt(SALT_ROUNDS);
+    this.passwordHash = await hash(password, salt);
+    return this;
+  }
+
+  public async comparePassword(password: string): Promise<boolean> {
+    return compare(password, this.passwordHash);
   }
 }
