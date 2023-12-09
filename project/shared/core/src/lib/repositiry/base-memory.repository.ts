@@ -3,7 +3,7 @@ import { Entity, EntityIdType } from './entity.interface';
 import { Repository } from '@project/shared/core';
 
 export abstract class BaseMemoryRepository<T extends Entity<EntityIdType>> implements Repository<T> {
-  private entities: Map<T['id'], T> = new Map();
+  readonly entities: Map<T['id'], T> = new Map();
 
   public async findById(id: T['id']): Promise<T | null> {
     return this.entities.get(id) || null;
