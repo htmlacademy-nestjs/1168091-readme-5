@@ -6,6 +6,7 @@ import { SALT_ROUNDS } from '../../account.constant';
 export class UserEntity implements AuthUser, Entity<string> {
   avatar?: string;
   createdAt: string;
+  userName: string;
   email: string;
   id?: string;
   passwordHash: string;
@@ -19,6 +20,7 @@ export class UserEntity implements AuthUser, Entity<string> {
     return {
       id: this.id,
       email: this.email,
+      userName: this.userName,
       passwordHash: this.passwordHash,
       avatar: this.avatar,
       createdAt: this.createdAt,
@@ -28,6 +30,7 @@ export class UserEntity implements AuthUser, Entity<string> {
 
   public populate(authUser: AuthUser): void {
     this.email = authUser.email;
+    this.userName = authUser.userName;
     if (authUser.avatar) {
       this.avatar = authUser.avatar;
     }
