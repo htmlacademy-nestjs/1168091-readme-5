@@ -1,1 +1,2 @@
-export * from './lib/shared/core';
+export * from './lib/repositiry/entity.interface';
+export * from './lib/repositiry/repository.interface';
