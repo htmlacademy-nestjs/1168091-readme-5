@@ -8,7 +8,6 @@ export class UserEntity implements AuthUser, Entity<string> {
   createdAt: string;
   email: string;
   id?: string;
-  login: string;
   passwordHash: string;
   updatedAt: string;
 
@@ -19,7 +18,6 @@ export class UserEntity implements AuthUser, Entity<string> {
   public toPOJO() {
     return {
       id: this.id,
-      login: this.login,
       email: this.email,
       passwordHash: this.passwordHash,
       avatar: this.avatar,
@@ -30,7 +28,6 @@ export class UserEntity implements AuthUser, Entity<string> {
 
   public populate(authUser: AuthUser): void {
     this.email = authUser.email;
-    this.login = authUser.login;
     if (authUser.avatar) {
       this.avatar = authUser.avatar;
     }
