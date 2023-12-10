@@ -1,7 +1,7 @@
 import { Expose } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class UserRdo {
+export class LoggedUserRdo {
   @ApiProperty({
     description: 'The uniq user ID',
     example: '13'
@@ -29,6 +29,13 @@ export class UserRdo {
   })
   @Expose()
   createdAt: string;
+
+  @ApiProperty({
+    description: 'Access token',
+    example: 'sldkjf;slafda;lsdfj;asldf'
+  })
+  @Expose()
+  accessToken: string;
 
   @ApiProperty({
     description: 'User avatar',
