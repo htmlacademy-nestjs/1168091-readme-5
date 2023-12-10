@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { PostState } from '@project/shared/types';
 
-export class AbstractPostDto {
+export abstract class AbstractPostDto {
   @ApiProperty({
     description: 'AuthorID',
     example: '7c091505-5dd9-4192-8141-4f0187fc9204'

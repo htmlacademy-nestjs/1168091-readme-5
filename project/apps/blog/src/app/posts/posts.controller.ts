@@ -2,6 +2,9 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { CreatePostDto } from './dto/create-post';
 import { RepostDto } from './dto/repost.dto';
 import { PostsService } from './posts.service';
+import { fillDto } from '@project/shared/helpers';
+import { postTypeToRdoClass } from '../rdo/post';
+import { AbstractPostEntity } from './entities/abstract-post.entity';
 
 @Controller('post')
 export class PostsController {
@@ -12,7 +15,8 @@ export class PostsController {
   }
   @Post('create')
   async create(@Body() createPostDto: CreatePostDto) {
-    return await this.postService.createPost(createPostDto);
+    const newPost: AbstractPostEntity = await this.postService.createPost(createPostDto);
+    return fillDto(postTypeToRdoClass[newPost.postType], newPost.toPOJO());
   }
 
   @Put('update/:id')

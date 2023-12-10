@@ -10,6 +10,14 @@ export class LinkPostEntity extends AbstractPostEntity implements LinkPost {
     super(linkPost);
     this.description = linkPost.description;
     this.url = linkPost.url;
+    this.postType = ContentType.LINK;
+  }
+
+  public toPOJO(): any {
+    return {
+      ... super.toPOJO(),
+      ...this
+    }
   }
 
 }

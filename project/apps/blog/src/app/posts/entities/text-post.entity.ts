@@ -11,5 +11,13 @@ export class TextPostEntity extends AbstractPostEntity implements TextPost {
     super(textPost);
     this.text = textPost.text;
     this.title = textPost.title;
+    this.postType = ContentType.TEXT
+  }
+
+  public toPOJO(): any {
+    return {
+      ... super.toPOJO(),
+      ...this
+    }
   }
 }

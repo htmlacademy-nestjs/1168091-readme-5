@@ -1,7 +1,7 @@
 import { AbstractPost, PostState } from '@project/shared/types';
 import { Entity } from '@project/shared/core';
 
-export class AbstractPostEntity implements AbstractPost, Entity<string> {
+export abstract class AbstractPostEntity implements AbstractPost, Entity<string> {
   id: string;
   authorId: string;
   isRepost: boolean;
@@ -9,8 +9,9 @@ export class AbstractPostEntity implements AbstractPost, Entity<string> {
   tags: string[];
   createdAt: string;
   updatedAt: string;
+  postType: string;
 
-  constructor(abstractPost: AbstractPost) {
+  protected constructor(abstractPost: AbstractPost) {
     this.id = abstractPost.id;
     this.postState = abstractPost.postState;
     this.authorId = abstractPost.authorId;
@@ -22,7 +23,13 @@ export class AbstractPostEntity implements AbstractPost, Entity<string> {
 
   public toPOJO() {
     return {
-      ...this
+      id: this.id,
+      postState: this.postState,
+      authorId: this.authorId,
+      tags: this.tags,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt,
+      isRepost: this.isRepost
     }
   }
 

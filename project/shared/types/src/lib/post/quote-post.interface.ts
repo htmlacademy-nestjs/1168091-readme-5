@@ -3,6 +3,6 @@ import { ContentType } from '@project/shared/types';
 
 export interface QuotePost extends AbstractPost {
   text: string;
-  quoteAuthorId: number;
+  quoteAuthorId: string;
   postType: ContentType.QUOTE;
 }
