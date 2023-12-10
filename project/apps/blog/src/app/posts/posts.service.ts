@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreatePostDto } from './dto/create-post';
 import { PostMemoryRepository } from './post-memory.repository';
-import { AbstractPost, ContentType, LinkPost, PhotoPost, QuotePost, TextPost, VideoPost } from '@project/shared/types';
+import { ContentType, LinkPost, PhotoPost, QuotePost, TextPost, VideoPost } from '@project/shared/types';
 import { PhotoEntity } from './entities/photo.entity';
 import { LinkPostEntity } from './entities/link-post.entity';
 import { QuotePostEntity } from './entities/quote-post.entity';
