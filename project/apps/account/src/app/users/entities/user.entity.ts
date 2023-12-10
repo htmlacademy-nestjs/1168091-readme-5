@@ -8,7 +8,7 @@ export class UserEntity implements AuthUser, Entity<string> {
   createdAt: string;
   userName: string;
   email: string;
-  id?: string;
+  id: string;
   passwordHash: string;
   updatedAt: string;
 

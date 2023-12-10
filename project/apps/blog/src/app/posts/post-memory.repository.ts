@@ -1,5 +1,4 @@
 import { BaseMemoryRepository } from '@project/shared/core';
+import { AbstractPostEntity } from './entities/abstract-post.entity';
 
-export class PostMemoryRepository extends BaseMemoryRepository<any>{
-
-}
+export class PostMemoryRepository extends BaseMemoryRepository<AbstractPostEntity>{}
