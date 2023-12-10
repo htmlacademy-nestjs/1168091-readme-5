@@ -32,7 +32,7 @@ export class LoggedUserRdo {
 
   @ApiProperty({
     description: 'Access token',
-    example: 'sldkjf;slafda;lsdfj;asldf'
+    example: '7c091505-5dd9-4192-8141-4f0187fc9204'
   })
   @Expose()
   accessToken: string;
