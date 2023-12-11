@@ -1,6 +1,7 @@
 import { Like } from '@project/shared/types';
+import { Entity } from '@project/shared/core';
 
-export class LikesEntity {
+export class LikesEntity implements Like, Entity<string>{
   id: string;
   userId: string;
   postId: string;

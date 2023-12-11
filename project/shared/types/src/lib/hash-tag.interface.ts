@@ -1,4 +1,4 @@
 export interface HashTag {
-  id: number,
+  id?: string,
   tagName: string
 }
