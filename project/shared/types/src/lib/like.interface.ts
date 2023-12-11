@@ -1,6 +1,5 @@
 export interface Like {
-  id: string,
-  userId: number,
-  postId: number,
-  createdAt: string
+  id?: string;
+  userId: string;
+  postId: string;
 }
