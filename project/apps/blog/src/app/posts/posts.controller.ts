@@ -3,11 +3,10 @@ import { CreatePostDto } from './dto/create-post';
 import { RepostDto } from './dto/repost.dto';
 import { PostsService } from './posts.service';
 import { fillDto } from '@project/shared/helpers';
-import { postTypeToRdoClass } from '../rdo/post';
+import { postTypeToRdoClass } from './rdo/post';
 import { AbstractPostEntity } from './entities/abstract-post.entity';
 import { ApiResponse } from '@nestjs/swagger';
-import { CommentRdo } from '../comments/rdo/comment.rdo';
-import { AbstractPostRdo } from '../rdo/post/abstract-post.rdo';
+import { AbstractPostRdo } from './rdo/post/abstract-post.rdo';
 
 @Controller('post')
 export class PostsController {
